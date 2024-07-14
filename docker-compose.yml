@@ -3,3 +3,11 @@ services:
     build: ./container/php
     volumes:
       - ./html:/var/www/html
+  web:
+    image: nginx:1.20-alpine
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/var/www/html
+      - ./container/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    working_dir: /var/www/html
