@@ -1,0 +1,5 @@
+services:
+  php:
+    build: ./container/php
+    volumes:
+      - ./html:/var/www/html
