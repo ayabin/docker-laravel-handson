@@ -11,3 +11,9 @@ services:
       - ./html:/var/www/html
       - ./container/nginx/default.conf:/etc/nginx/conf.d/default.conf
     working_dir: /var/www/html
+  db:
+    build: ./container/mysql
+    volumes:
+      - db-store:/var/lib/mysql
+volumes:
+  db-store:
